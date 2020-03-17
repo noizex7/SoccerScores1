@@ -1,5 +1,10 @@
 #include "Soccerplayers.h"
 
+Soccerplayers::Soccerplayers()
+{
+	setAll("N/A", 1, 1);
+}
+
 Soccerplayers::Soccerplayers(string name, int number, int score)
 {
 	setAll(name, number, score);
@@ -39,16 +44,16 @@ int Soccerplayers::getPointsScored() const
 	return pointsScored;
 }
 
-void Soccerplayers::setAll(string , int, int)
+void Soccerplayers::setAll(string aPlayerName, int aPlayerNumber, int aPointsScored)
 {
-	setName(playerName);
-	setPlayerNumber(playerNumber);
-	setPointsScored(pointsScored);
+	setName(aPlayerName);
+	setPlayerNumber(aPlayerNumber);
+	setPointsScored(aPointsScored);
 }
 
 void Soccerplayers::displayData()
 {
-	cout << setw(30)<< getName() << setw(30) << getPlayerNumber() << setw(30) << getPointsScored();
+	cout << setw(30) << getName() << setw(30) << getPlayerNumber() << setw(30) << getPointsScored();
 }
 
 Soccerplayers::~Soccerplayers()
