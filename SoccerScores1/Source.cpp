@@ -104,9 +104,9 @@ void display(int* aSize, Soccerplayers* aList)
 
 void totalPoints(int* aSize, Soccerplayers* aList)
 {
-	int total;
+	int total = 0;
 	for (int count = 0; count < *aSize; count++)
-		total =+ aList[count].getPointsScored();
+		total += aList[count].getPointsScored();
 	cout << "The total of points scored is: " << total << endl;
 
 }
@@ -118,10 +118,8 @@ void pickMVP(int* aSize, Soccerplayers* aList)
 	Soccerplayers scan = *aList;
 	for (i = 0; i < *aSize; i++)
 	{
-		if (aList->getPointsScored() > scan.getPointsScored())
-		{
-			scan = *(aList + i);
-		}
+		if (aList[i].getPointsScored() > scan.getPointsScored())
+			scan = aList[i];
 	}
 	cout << "\n\n\nThe MVP is " << scan.getName() << " with " << scan.getPointsScored() << " points.";
 }
